@@ -1,0 +1,563 @@
+INFO     <2016-12-23 15:13:41,935> (client.py:81) - Initializing project - /Users/jqno/workspaces/personal/foobal/tja
+DEBUG    <2016-12-23 15:13:41,936> (client.py:106) - __init__: in
+DEBUG    <2016-12-23 15:13:41,966> (client.py:193) - [(<frame object at 0x10e8c2650>, '/Users/jqno/.vim/plugged/ensime-vim/ensime_shared/client.py', 193, 'lazy_initialize_ensime', ['                self.log.debug(str(inspect.stack()))\n'], 0), (<frame object at 0x10e8c6638>, '/Users/jqno/.vim/plugged/ensime-vim/ensime_shared/client.py', 219, 'setup', ['        return self.running and lazy_initialize_ensime() and ready_to_connect()\n'], 0), (<frame object at 0x10e337c50>, '/Users/jqno/.vim/plugged/ensime-vim/ensime_shared/ensime.py', 103, 'client_for', ['            if client.setup(quiet=quiet, bootstrap_server=bootstrap_server):\n'], 0), (<frame object at 0x7fbd484eb650>, '/Users/jqno/.vim/plugged/ensime-vim/ensime_shared/ensime.py', 92, 'current_client', ['                create_client=create_client)\n'], 0), (<frame object at 0x7fbd484eb430>, '/Users/jqno/.vim/plugged/ensime-vim/ensime_shared/ensime.py', 21, 'wrapper2', ['                create_client=create_client)\n'], 0), (<frame object at 0x10e3645d8>, '<string>', 3, '<module>', None, None)]
+DEBUG    <2016-12-23 15:13:41,967> (client.py:195) - setup(quiet=True, bootstrap_server=False) called by wrapper2()
+DEBUG    <2016-12-23 15:13:54,191> (client.py:263) - connect_ensime_server: in
+DEBUG    <2016-12-23 15:13:54,192> (client.py:282) - About to connect to ws://127.0.0.1:65330/jerky with options {}
+DEBUG    <2016-12-23 15:13:54,593> (client.py:601) - send_request: in
+DEBUG    <2016-12-23 15:13:54,593> (client.py:604) - send_request: 
+{'callId': 0, 'req': {'typehint': 'ConnectionInfoReq'}}
+DEBUG    <2016-12-23 15:13:54,593> (client.py:255) - send: in
+DEBUG    <2016-12-23 15:13:54,593> (client.py:258) - send: sending JSON on WebSocket
+DEBUG    <2016-12-23 15:13:55,063> (client.py:641) - unqueue: result received
+{
+  "callId": 0,
+  "payload": {
+    "typehint": "ConnectionInfo",
+    "implementation": {
+      "name": "ENSIME"
+    },
+    "version": "1.0"
+  }
+}
+DEBUG    <2016-12-23 15:13:55,063> (protocol.py:48) - handle_incoming_response: in [typehint: ConnectionInfo, call ID: 0]
+WARNING  <2016-12-23 15:13:55,064> (protocol.py:61) - Response has not been handled: 
+{u'implementation': {u'name': u'ENSIME'},
+ u'typehint': u'ConnectionInfo',
+ u'version': u'1.0'}
+DEBUG    <2016-12-23 15:13:59,406> (client.py:690) - complete_func: in 1 
+DEBUG    <2016-12-23 15:13:59,407> (client.py:356) - complete: in
+DEBUG    <2016-12-23 15:13:59,407> (client.py:324) - 12 6
+DEBUG    <2016-12-23 15:13:59,407> (client.py:327) - 312
+DEBUG    <2016-12-23 15:13:59,407> (client.py:601) - send_request: in
+DEBUG    <2016-12-23 15:13:59,407> (client.py:604) - send_request: 
+{'callId': 1,
+ 'req': {'caseSens': True,
+         'fileInfo': {'contents': 'object CompletionTest {\n  val hello = "Hello world"\n\n  // To reproduce this issue:\n  // - write `print`, invoke completion, choose `println`\n  // - write the open paren\n  // - write `he`, invoke completion\n  //\n  // Expected: the line expands to `println(hello)`\n  // Actual: the line expands to `hello)`\n\n  prin\n}',
+                      'file': '/Users/jqno/workspaces/personal/foobal/tja/src/main/scala/CompletionTest.scala'},
+         'maxResults': 100,
+         'point': 312,
+         'reload': False,
+         'typehint': 'CompletionsReq'}}
+DEBUG    <2016-12-23 15:13:59,407> (client.py:255) - send: in
+DEBUG    <2016-12-23 15:13:59,407> (client.py:258) - send: sending JSON on WebSocket
+DEBUG    <2016-12-23 15:13:59,408> (client.py:690) - complete_func: in 0 prin
+DEBUG    <2016-12-23 15:13:59,408> (client.py:641) - unqueue: result received
+{
+  "payload": {
+    "typehint": "IndexerReadyEvent"
+  }
+}
+DEBUG    <2016-12-23 15:13:59,409> (protocol.py:48) - handle_incoming_response: in [typehint: IndexerReadyEvent, call ID: None]
+DEBUG    <2016-12-23 15:13:59,409> (client.py:641) - unqueue: result received
+{
+  "payload": {
+    "typehint": "SendBackgroundMessageEvent",
+    "detail": "Initializing Analyzer. Please wait...",
+    "code": 105
+  }
+}
+DEBUG    <2016-12-23 15:13:59,409> (protocol.py:48) - handle_incoming_response: in [typehint: SendBackgroundMessageEvent, call ID: None]
+WARNING  <2016-12-23 15:13:59,409> (protocol.py:61) - Response has not been handled: 
+{u'code': 105,
+ u'detail': u'Initializing Analyzer. Please wait...',
+ u'typehint': u'SendBackgroundMessageEvent'}
+DEBUG    <2016-12-23 15:13:59,409> (client.py:641) - unqueue: result received
+{
+  "payload": {
+    "typehint": "AnalyzerReadyEvent"
+  }
+}
+DEBUG    <2016-12-23 15:13:59,409> (protocol.py:48) - handle_incoming_response: in [typehint: AnalyzerReadyEvent, call ID: None]
+DEBUG    <2016-12-23 15:13:59,409> (client.py:641) - unqueue: result received
+{
+  "payload": {
+    "typehint": "FullTypeCheckCompleteEvent"
+  }
+}
+DEBUG    <2016-12-23 15:13:59,409> (protocol.py:48) - handle_incoming_response: in [typehint: FullTypeCheckCompleteEvent, call ID: None]
+DEBUG    <2016-12-23 15:13:59,409> (typecheck.py:28) - handle_typecheck_complete: in
+DEBUG    <2016-12-23 15:13:59,409> (typecheck.py:30) - Completed typecheck was not requested by user, not displaying notes
+DEBUG    <2016-12-23 15:13:59,410> (client.py:717) - complete_func: suggestions in
+DEBUG    <2016-12-23 15:14:09,340> (client.py:690) - complete_func: in 1 
+DEBUG    <2016-12-23 15:14:09,340> (client.py:356) - complete: in
+DEBUG    <2016-12-23 15:14:09,340> (client.py:324) - 12 6
+DEBUG    <2016-12-23 15:14:09,340> (client.py:327) - 312
+DEBUG    <2016-12-23 15:14:09,340> (client.py:601) - send_request: in
+DEBUG    <2016-12-23 15:14:09,340> (client.py:604) - send_request: 
+{'callId': 2,
+ 'req': {'caseSens': True,
+         'fileInfo': {'contents': 'object CompletionTest {\n  val hello = "Hello world"\n\n  // To reproduce this issue:\n  // - write `print`, invoke completion, choose `println`\n  // - write the open paren\n  // - write `he`, invoke completion\n  //\n  // Expected: the line expands to `println(hello)`\n  // Actual: the line expands to `hello)`\n\n  prin\n}',
+                      'file': '/Users/jqno/workspaces/personal/foobal/tja/src/main/scala/CompletionTest.scala'},
+         'maxResults': 100,
+         'point': 312,
+         'reload': False,
+         'typehint': 'CompletionsReq'}}
+DEBUG    <2016-12-23 15:14:09,340> (client.py:255) - send: in
+DEBUG    <2016-12-23 15:14:09,340> (client.py:258) - send: sending JSON on WebSocket
+DEBUG    <2016-12-23 15:14:09,342> (client.py:690) - complete_func: in 0 prin
+DEBUG    <2016-12-23 15:14:09,342> (client.py:641) - unqueue: result received
+{
+  "callId": 1,
+  "payload": {
+    "typehint": "CompletionInfoList",
+    "prefix": "prin",
+    "completions": [{
+      "name": "print",
+      "typeInfo": {
+        "resultType": {
+          "name": "Unit",
+          "fullName": "scala.Unit",
+          "typehint": "BasicTypeInfo",
+          "typeArgs": [],
+          "members": [],
+          "declAs": {
+            "typehint": "Class"
+          }
+        },
+        "name": "(Any) => Unit",
+        "paramSections": [{
+          "params": [["x", {
+            "name": "Any",
+            "fullName": "scala.Any",
+            "typehint": "BasicTypeInfo",
+            "typeArgs": [],
+            "members": [],
+            "declAs": {
+              "typehint": "Class"
+            }
+          }]],
+          "isImplicit": false
+        }],
+        "fullName": "(scala.Any) => scala.Unit",
+        "typehint": "ArrowTypeInfo"
+      },
+      "typeSig": {
+        "sections": [[["x", "scala.Any"]]],
+        "result": "scala.Unit",
+        "hasImplicit": false
+      },
+      "relevance": 90,
+      "isCallable": true
+    }, {
+      "name": "printf",
+      "typeInfo": {
+        "resultType": {
+          "name": "Unit",
+          "fullName": "scala.Unit",
+          "typehint": "BasicTypeInfo",
+          "typeArgs": [],
+          "members": [],
+          "declAs": {
+            "typehint": "Class"
+          }
+        },
+        "name": "(String, Any*) => Unit",
+        "paramSections": [{
+          "params": [["text", {
+            "name": "String",
+            "fullName": "java.lang.String",
+            "typehint": "BasicTypeInfo",
+            "typeArgs": [],
+            "members": [],
+            "declAs": {
+              "typehint": "Class"
+            }
+          }], ["xs", {
+            "name": "Any*",
+            "fullName": "scala.Any*",
+            "typehint": "BasicTypeInfo",
+            "typeArgs": [{
+              "name": "Any",
+              "fullName": "scala.Any",
+              "typehint": "BasicTypeInfo",
+              "typeArgs": [],
+              "members": [],
+              "declAs": {
+                "typehint": "Class"
+              }
+            }],
+            "members": [],
+            "declAs": {
+              "typehint": "Class"
+            }
+          }]],
+          "isImplicit": false
+        }],
+        "fullName": "(java.lang.String, scala.Any*) => scala.Unit",
+        "typehint": "ArrowTypeInfo"
+      },
+      "typeSig": {
+        "sections": [[["text", "java.lang.String"], ["xs", "scala.Any*"]]],
+        "result": "scala.Unit",
+        "hasImplicit": false
+      },
+      "relevance": 90,
+      "isCallable": true
+    }, {
+      "name": "println",
+      "typeInfo": {
+        "resultType": {
+          "name": "Unit",
+          "fullName": "scala.Unit",
+          "typehint": "BasicTypeInfo",
+          "typeArgs": [],
+          "members": [],
+          "declAs": {
+            "typehint": "Class"
+          }
+        },
+        "name": "(Any) => Unit",
+        "paramSections": [{
+          "params": [["x", {
+            "name": "Any",
+            "fullName": "scala.Any",
+            "typehint": "BasicTypeInfo",
+            "typeArgs": [],
+            "members": [],
+            "declAs": {
+              "typehint": "Class"
+            }
+          }]],
+          "isImplicit": false
+        }],
+        "fullName": "(scala.Any) => scala.Unit",
+        "typehint": "ArrowTypeInfo"
+      },
+      "typeSig": {
+        "sections": [[["x", "scala.Any"]]],
+        "result": "scala.Unit",
+        "hasImplicit": false
+      },
+      "relevance": 90,
+      "isCallable": true
+    }, {
+      "name": "println",
+      "typeInfo": {
+        "resultType": {
+          "name": "Unit",
+          "fullName": "scala.Unit",
+          "typehint": "BasicTypeInfo",
+          "typeArgs": [],
+          "members": [],
+          "declAs": {
+            "typehint": "Class"
+          }
+        },
+        "name": "() => Unit",
+        "paramSections": [{
+          "params": [],
+          "isImplicit": false
+        }],
+        "fullName": "() => scala.Unit",
+        "typehint": "ArrowTypeInfo"
+      },
+      "typeSig": {
+        "sections": [[]],
+        "result": "scala.Unit",
+        "hasImplicit": false
+      },
+      "relevance": 90,
+      "isCallable": true
+    }]
+  }
+}
+DEBUG    <2016-12-23 15:14:09,342> (protocol.py:48) - handle_incoming_response: in [typehint: CompletionInfoList, call ID: 1]
+DEBUG    <2016-12-23 15:14:09,342> (protocol.py:221) - handle_completion_info_list: in
+DEBUG    <2016-12-23 15:14:09,342> (protocol.py:225) - handle_completion_info_list: 
+[{'abbr': u'print(x: Any)', 'dup': 1, 'menu': u'Unit', 'word': u'print'},
+ {'abbr': u'printf(text: String, xs: Any*)',
+  'dup': 1,
+  'menu': u'Unit',
+  'word': u'printf'},
+ {'abbr': u'println(x: Any)', 'dup': 1, 'menu': u'Unit', 'word': u'println'},
+ {'abbr': u'println()', 'dup': 1, 'menu': u'Unit', 'word': u'println'}]
+DEBUG    <2016-12-23 15:14:09,343> (client.py:717) - complete_func: suggestions in
+DEBUG    <2016-12-23 15:14:14,908> (client.py:690) - complete_func: in 1 
+DEBUG    <2016-12-23 15:14:14,908> (client.py:356) - complete: in
+DEBUG    <2016-12-23 15:14:14,908> (client.py:324) - 12 12
+DEBUG    <2016-12-23 15:14:14,908> (client.py:327) - 318
+DEBUG    <2016-12-23 15:14:14,908> (client.py:601) - send_request: in
+DEBUG    <2016-12-23 15:14:14,908> (client.py:604) - send_request: 
+{'callId': 3,
+ 'req': {'caseSens': True,
+         'fileInfo': {'contents': 'object CompletionTest {\n  val hello = "Hello world"\n\n  // To reproduce this issue:\n  // - write `print`, invoke completion, choose `println`\n  // - write the open paren\n  // - write `he`, invoke completion\n  //\n  // Expected: the line expands to `println(hello)`\n  // Actual: the line expands to `hello)`\n\n  println(he)\n}',
+                      'file': '/Users/jqno/workspaces/personal/foobal/tja/src/main/scala/CompletionTest.scala'},
+         'maxResults': 100,
+         'point': 318,
+         'reload': False,
+         'typehint': 'CompletionsReq'}}
+DEBUG    <2016-12-23 15:14:14,909> (client.py:255) - send: in
+DEBUG    <2016-12-23 15:14:14,909> (client.py:258) - send: sending JSON on WebSocket
+DEBUG    <2016-12-23 15:14:14,910> (client.py:690) - complete_func: in 0 println(he
+DEBUG    <2016-12-23 15:14:14,910> (client.py:641) - unqueue: result received
+{
+  "callId": 2,
+  "payload": {
+    "typehint": "CompletionInfoList",
+    "prefix": "prin",
+    "completions": [{
+      "name": "print",
+      "typeInfo": {
+        "resultType": {
+          "name": "Unit",
+          "fullName": "scala.Unit",
+          "typehint": "BasicTypeInfo",
+          "typeArgs": [],
+          "members": [],
+          "declAs": {
+            "typehint": "Class"
+          }
+        },
+        "name": "(Any) => Unit",
+        "paramSections": [{
+          "params": [["x", {
+            "name": "Any",
+            "fullName": "scala.Any",
+            "typehint": "BasicTypeInfo",
+            "typeArgs": [],
+            "members": [],
+            "declAs": {
+              "typehint": "Class"
+            }
+          }]],
+          "isImplicit": false
+        }],
+        "fullName": "(scala.Any) => scala.Unit",
+        "typehint": "ArrowTypeInfo"
+      },
+      "typeSig": {
+        "sections": [[["x", "scala.Any"]]],
+        "result": "scala.Unit",
+        "hasImplicit": false
+      },
+      "relevance": 90,
+      "isCallable": true
+    }, {
+      "name": "printf",
+      "typeInfo": {
+        "resultType": {
+          "name": "Unit",
+          "fullName": "scala.Unit",
+          "typehint": "BasicTypeInfo",
+          "typeArgs": [],
+          "members": [],
+          "declAs": {
+            "typehint": "Class"
+          }
+        },
+        "name": "(String, Any*) => Unit",
+        "paramSections": [{
+          "params": [["text", {
+            "name": "String",
+            "fullName": "java.lang.String",
+            "typehint": "BasicTypeInfo",
+            "typeArgs": [],
+            "members": [],
+            "declAs": {
+              "typehint": "Class"
+            }
+          }], ["xs", {
+            "name": "Any*",
+            "fullName": "scala.Any*",
+            "typehint": "BasicTypeInfo",
+            "typeArgs": [{
+              "name": "Any",
+              "fullName": "scala.Any",
+              "typehint": "BasicTypeInfo",
+              "typeArgs": [],
+              "members": [],
+              "declAs": {
+                "typehint": "Class"
+              }
+            }],
+            "members": [],
+            "declAs": {
+              "typehint": "Class"
+            }
+          }]],
+          "isImplicit": false
+        }],
+        "fullName": "(java.lang.String, scala.Any*) => scala.Unit",
+        "typehint": "ArrowTypeInfo"
+      },
+      "typeSig": {
+        "sections": [[["text", "java.lang.String"], ["xs", "scala.Any*"]]],
+        "result": "scala.Unit",
+        "hasImplicit": false
+      },
+      "relevance": 90,
+      "isCallable": true
+    }, {
+      "name": "println",
+      "typeInfo": {
+        "resultType": {
+          "name": "Unit",
+          "fullName": "scala.Unit",
+          "typehint": "BasicTypeInfo",
+          "typeArgs": [],
+          "members": [],
+          "declAs": {
+            "typehint": "Class"
+          }
+        },
+        "name": "(Any) => Unit",
+        "paramSections": [{
+          "params": [["x", {
+            "name": "Any",
+            "fullName": "scala.Any",
+            "typehint": "BasicTypeInfo",
+            "typeArgs": [],
+            "members": [],
+            "declAs": {
+              "typehint": "Class"
+            }
+          }]],
+          "isImplicit": false
+        }],
+        "fullName": "(scala.Any) => scala.Unit",
+        "typehint": "ArrowTypeInfo"
+      },
+      "typeSig": {
+        "sections": [[["x", "scala.Any"]]],
+        "result": "scala.Unit",
+        "hasImplicit": false
+      },
+      "relevance": 90,
+      "isCallable": true
+    }, {
+      "name": "println",
+      "typeInfo": {
+        "resultType": {
+          "name": "Unit",
+          "fullName": "scala.Unit",
+          "typehint": "BasicTypeInfo",
+          "typeArgs": [],
+          "members": [],
+          "declAs": {
+            "typehint": "Class"
+          }
+        },
+        "name": "() => Unit",
+        "paramSections": [{
+          "params": [],
+          "isImplicit": false
+        }],
+        "fullName": "() => scala.Unit",
+        "typehint": "ArrowTypeInfo"
+      },
+      "typeSig": {
+        "sections": [[]],
+        "result": "scala.Unit",
+        "hasImplicit": false
+      },
+      "relevance": 90,
+      "isCallable": true
+    }]
+  }
+}
+DEBUG    <2016-12-23 15:14:14,910> (protocol.py:48) - handle_incoming_response: in [typehint: CompletionInfoList, call ID: 2]
+DEBUG    <2016-12-23 15:14:14,910> (protocol.py:221) - handle_completion_info_list: in
+DEBUG    <2016-12-23 15:14:14,911> (protocol.py:225) - handle_completion_info_list: 
+[{'abbr': u'print(x: Any)', 'dup': 1, 'menu': u'Unit', 'word': u'print'},
+ {'abbr': u'printf(text: String, xs: Any*)',
+  'dup': 1,
+  'menu': u'Unit',
+  'word': u'printf'},
+ {'abbr': u'println(x: Any)', 'dup': 1, 'menu': u'Unit', 'word': u'println'},
+ {'abbr': u'println()', 'dup': 1, 'menu': u'Unit', 'word': u'println'}]
+DEBUG    <2016-12-23 15:14:14,911> (client.py:717) - complete_func: suggestions in
+DEBUG    <2016-12-23 15:14:20,020> (client.py:641) - unqueue: result received
+{
+  "callId": 3,
+  "payload": {
+    "typehint": "CompletionInfoList",
+    "prefix": "he",
+    "completions": [{
+      "name": "hello",
+      "typeInfo": {
+        "name": "String",
+        "fullName": "java.lang.String",
+        "typehint": "BasicTypeInfo",
+        "typeArgs": [],
+        "members": [],
+        "declAs": {
+          "typehint": "Class"
+        }
+      },
+      "typeSig": {
+        "sections": [],
+        "result": "java.lang.String",
+        "hasImplicit": false
+      },
+      "relevance": 80,
+      "isCallable": false
+    }]
+  }
+}
+DEBUG    <2016-12-23 15:14:20,020> (protocol.py:48) - handle_incoming_response: in [typehint: CompletionInfoList, call ID: 3]
+DEBUG    <2016-12-23 15:14:20,020> (protocol.py:221) - handle_completion_info_list: in
+DEBUG    <2016-12-23 15:14:20,020> (protocol.py:225) - handle_completion_info_list: 
+[{'abbr': u'hello', 'dup': 1, 'menu': u'String', 'word': u'hello'}]
+DEBUG    <2016-12-23 15:14:23,785> (client.py:690) - complete_func: in 1 
+DEBUG    <2016-12-23 15:14:23,785> (client.py:356) - complete: in
+DEBUG    <2016-12-23 15:14:23,786> (client.py:324) - 12 12
+DEBUG    <2016-12-23 15:14:23,786> (client.py:327) - 318
+DEBUG    <2016-12-23 15:14:23,786> (client.py:601) - send_request: in
+DEBUG    <2016-12-23 15:14:23,786> (client.py:604) - send_request: 
+{'callId': 4,
+ 'req': {'caseSens': True,
+         'fileInfo': {'contents': 'object CompletionTest {\n  val hello = "Hello world"\n\n  // To reproduce this issue:\n  // - write `print`, invoke completion, choose `println`\n  // - write the open paren\n  // - write `he`, invoke completion\n  //\n  // Expected: the line expands to `println(hello)`\n  // Actual: the line expands to `hello)`\n\n  println(he)\n}',
+                      'file': '/Users/jqno/workspaces/personal/foobal/tja/src/main/scala/CompletionTest.scala'},
+         'maxResults': 100,
+         'point': 318,
+         'reload': False,
+         'typehint': 'CompletionsReq'}}
+DEBUG    <2016-12-23 15:14:23,786> (client.py:255) - send: in
+DEBUG    <2016-12-23 15:14:23,786> (client.py:258) - send: sending JSON on WebSocket
+DEBUG    <2016-12-23 15:14:23,787> (client.py:690) - complete_func: in 0 println(he
+DEBUG    <2016-12-23 15:14:24,042> (client.py:641) - unqueue: result received
+{
+  "callId": 4,
+  "payload": {
+    "typehint": "CompletionInfoList",
+    "prefix": "he",
+    "completions": [{
+      "name": "hello",
+      "typeInfo": {
+        "name": "String",
+        "fullName": "java.lang.String",
+        "typehint": "BasicTypeInfo",
+        "typeArgs": [],
+        "members": [],
+        "declAs": {
+          "typehint": "Class"
+        }
+      },
+      "typeSig": {
+        "sections": [],
+        "result": "java.lang.String",
+        "hasImplicit": false
+      },
+      "relevance": 80,
+      "isCallable": false
+    }]
+  }
+}
+DEBUG    <2016-12-23 15:14:24,042> (protocol.py:48) - handle_incoming_response: in [typehint: CompletionInfoList, call ID: 4]
+DEBUG    <2016-12-23 15:14:24,042> (protocol.py:221) - handle_completion_info_list: in
+DEBUG    <2016-12-23 15:14:24,042> (protocol.py:225) - handle_completion_info_list: 
+[{'abbr': u'hello', 'dup': 1, 'menu': u'String', 'word': u'hello'}]
+DEBUG    <2016-12-23 15:14:24,042> (client.py:717) - complete_func: suggestions in
+DEBUG    <2016-12-23 15:14:27,703> (client.py:379) - type_check_cmd: in
+INFO     <2016-12-23 15:14:27,703> (typecheck.py:18) - Readying typecheck...
+DEBUG    <2016-12-23 15:14:27,703> (client.py:620) - type_check: in
+DEBUG    <2016-12-23 15:14:27,703> (client.py:601) - send_request: in
+DEBUG    <2016-12-23 15:14:27,703> (client.py:604) - send_request: 
+{'callId': 5,
+ 'req': {'files': ['/Users/jqno/workspaces/personal/foobal/tja/src/main/scala/CompletionTest.scala'],
+         'typehint': 'TypecheckFilesReq'}}
+DEBUG    <2016-12-23 15:14:27,703> (client.py:255) - send: in
+DEBUG    <2016-12-23 15:14:27,704> (client.py:258) - send: sending JSON on WebSocket
+DEBUG    <2016-12-23 15:14:27,715> (client.py:298) - teardown: in
+DEBUG    <2016-12-23 15:14:27,716> (client.py:292) - shutdown_server: in
