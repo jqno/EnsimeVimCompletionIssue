@@ -9,5 +9,4 @@ object CompletionTest {
   // Expected: the line expands to `println(hello)`
   // Actual: the line expands to `hello)`
 
-  hello)
 }
